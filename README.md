@@ -7,9 +7,9 @@ The Naive Bayes algorithm is a classification technique based on Bayes Theorem. 
 
 where:
 
-P(c\|x) - the posterior probability of class given a predictor
-P(x\|c) - the probability of the predictor $$x$$ given the class. Also known as Likelihood
-P(c) - the prior probability of the class
-P(x) - the prior probability of predictor.
+**P(c\|x)** - *The posterior probability of class given a predictor*.
+**P(x\|c)** - *The probability of the predictor $$x$$ given the class. Also known as Likelihood.*.
+**P(c)** - *The prior probability of the class.*.
+**P(x)** - *The prior probability of predictor.*.
 
 Find [here]() the blog post for a better understanding.

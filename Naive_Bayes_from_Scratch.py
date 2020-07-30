@@ -88,9 +88,8 @@ class NaiveBayesClassifier:
         """
 
         exponent = np.exp(-((x-mean)**2 / (2*std**2)))
-        proba = exponent / (np.sqrt(2*np.pi)*std)
 
-        return proba
+        return exponent / (np.sqrt(2*np.pi)*std)
 
     def predict(self, X):
         """

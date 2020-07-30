@@ -78,7 +78,7 @@ class NaiveBayesClassifier:
 
         Parameters:
         -----------
-        X- array, list of features
+        x- variable, array, list of features
         mean- numpy mean method
         std- numpt std method
 
@@ -93,7 +93,46 @@ class NaiveBayesClassifier:
         return proba
 
     def predict(self, X):
-        pass
+        """
+        Applies the distribution method and the Naive Bayes Classifier to
+        the features
+
+        Parameters:
+        ------------
+        X- array, list of features
+
+        Returns:
+        ---------
+        Set of predicted targets
+        """
+        MAPs = []
+
+        for row in X:
+            joint_proba = {}
+            
+            for target, features in self.class_summary.items():
+                total_features =  len(features['summary'])
+                likelihood = 1
+
+                for idx in range(total_features):
+                    feature = row[idx]
+                    mean = features['summary'][idx]['mean']
+                    stdev = features['summary'][idx]['std']
+                    normal_proba = self.distribution(feature, mean, stdev)
+                    likelihood *= normal_proba
+                prior_proba = features['prior_proba']
+                joint_proba[target] = prior_proba * likelihood
+
+            post_proba = {}
+            marginal_proba = sum(joint_proba.values())
+
+            for target, joint_p in joint_proba.items():
+                post_proba[target] = joint_p / marginal_proba
+            
+            MAP = max(post_proba, key= post_proba.get)
+            MAPs.append(MAP)
+
+        return MAPs
 
     def accuracy(self, y_test, y_pred):
         pass

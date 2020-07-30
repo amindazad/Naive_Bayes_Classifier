@@ -15,5 +15,8 @@ where:
 
 **P(x)** - *The prior probability of predictor.*.
 
+Or using Bayesian probability terminology, the Guassian Naive Bayes classifier equation can be written as
+
+![proba](https://wikimedia.org/api/rest_v1/media/math/render/svg/d0d9f596ba491384422716b01dbe74472060d0d7)
 
 Find [here]() the blog post for a better understanding.

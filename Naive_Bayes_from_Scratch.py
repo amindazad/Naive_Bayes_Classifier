@@ -47,16 +47,16 @@ class NaiveBayesClassifier:
     
     def fit (self, X, y):
         """
-        Fits the Guassian Naive Bayes Classifier on the data
+        Trains the model.
 
         Parameters:
-        ------------
-        X- array, list of features 
-        y- list, target
+        ----------
+        X: array-like, training features
+        y: list, target variable
 
         Returns:
         -----------
-        Summary of fitted class
+        Dictionary with the prior probability, mean, and standard deviation of each class
         """
 
         separated_classes = self.separate_classes(X, y)
@@ -71,17 +71,17 @@ class NaiveBayesClassifier:
 
     def distribution(self, x, mean, std):
         """
-        Calculates exponent and probability
+        Gaussian Distribution Function
 
         Parameters:
-        -----------
-        x- variable, array, list of features
-        mean- numpy mean method
-        std- numpt std method
+        ----------
+        x: float, value of feature
+        mean: float, the average value of feature
+        stdev: float, the standard deviation of feature
 
         Returns:
-        -----------
-        Guassian distribution probability
+        ----------
+        A value of Normal Probability
         """
 
         exponent = np.exp(-((x-mean)**2 / (2*std**2)))
@@ -90,16 +90,15 @@ class NaiveBayesClassifier:
 
     def predict(self, X):
         """
-        Applies the distribution method and the Naive Bayes Classifier to
-        the features
+        Predicts the class.
 
         Parameters:
-        ------------
-        X- array, list of features
+        ----------
+        X: array-like, test data set
 
         Returns:
-        ---------
-        Set of predicted targets
+        -----------
+        List of predicted class for each row of data set
         """
         MAPs = []
 
@@ -126,16 +125,16 @@ class NaiveBayesClassifier:
 
     def accuracy(self, y_test, y_pred):
         """
-        Calculates the Naive Bayes Classifier's accuracy.
+        Calculates model's accuracy.
 
         Parameters:
         ------------
-        y_test- list of test targets
-        y_pred- list of predicted targets
+        y_test: actual values
+        y_pred: predicted values
 
         Returns:
         ------------
-        The accuracy of the Naive Bayes Classifier used
+        A number between 0-1, representing the percentage of correct predictions.
         """
 
         true_true = 0

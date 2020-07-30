@@ -135,4 +135,22 @@ class NaiveBayesClassifier:
         return MAPs
 
     def accuracy(self, y_test, y_pred):
-        pass
+        """
+        Calculates the Naive Bayes Classifier's accuracy.
+
+        Parameters:
+        ------------
+        y_test- list of test targets
+        y_pred- list of predicted targets
+
+        Returns:
+        ------------
+        The accuracy of the Naive Bayes Classifier used
+        """
+
+        true_true = 0
+
+        for y_t, y_p in zip(y_test, y_pred):
+            if y_t == y_p:
+                true_true += 1 
+        return true_true / len(y_test)

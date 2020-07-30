@@ -122,13 +122,7 @@ class NaiveBayesClassifier:
                 prior_proba = features['prior_proba']
                 joint_proba[class_name] = prior_proba * likelihood
 
-            post_proba = {}
-            marginal_proba = sum(joint_proba.values())
-
-            for class_name, joint_p in joint_proba.items():
-                post_proba[class_name] = joint_p / marginal_proba
-            
-            MAP = max(post_proba, key= post_proba.get)
+            MAP = max(joint_proba, key= joint_proba.get)
             MAPs.append(MAP)
 
         return MAPs

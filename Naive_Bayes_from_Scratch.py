@@ -19,12 +19,9 @@ class NaiveBayesClassifier:
         A dictionnary with y as keys and assigned X as values.
         """
         separated_classes = {}
-        
         for i in range(len(X)):
-
             feature_values = X[i]
             class_name = y[i]
-
             if class_name not in separated_classes:
                 separated_classes[class_name] = []
             separated_classes[class_name].append(feature_values)
@@ -62,13 +59,13 @@ class NaiveBayesClassifier:
         Summary of fitted class
         """
 
-        separated_classes =  self.separate_classes(X, y)
+        separated_classes = self.separate_classes(X, y)
         self.class_summary = {}
 
-        for class_name, feature_values in separate_classes.items():
-            self.class_summary[classs_name] = {
+        for class_name, feature_values in separated_classes.items():
+            self.class_summary[class_name] = {
                 'prior_proba': len(feature_values)/len(X),
-                'summary': [i for i in self.stat_info(feature_values)]
+                'summary': [i for i in self.stat_info(feature_values)],
             }
         return self.class_summary
 

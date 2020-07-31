@@ -15,7 +15,6 @@ class NaiveBayesClassifier:
         y- list, target
 
         Returns:
-        ------------
         A dictionnary with y as keys and assigned X as values.
         """
         separated_classes = {}
@@ -36,7 +35,6 @@ class NaiveBayesClassifier:
         X- array , list of features
 
         Returns:
-        ------------
         A dictionary with STD and Mean as keys and assigned features STD and Mean as values.
         """
         for feature in zip(*X):
@@ -55,7 +53,6 @@ class NaiveBayesClassifier:
         y: list, target variable
 
         Returns:
-        -----------
         Dictionary with the prior probability, mean, and standard deviation of each class
         """
 
@@ -80,7 +77,6 @@ class NaiveBayesClassifier:
         stdev: float, the standard deviation of feature
 
         Returns:
-        ----------
         A value of Normal Probability
         """
 

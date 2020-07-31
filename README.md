@@ -19,4 +19,4 @@ Or using Bayesian probability terminology, the Guassian Naive Bayes classifier e
 
 ![proba](https://wikimedia.org/api/rest_v1/media/math/render/svg/d0d9f596ba491384422716b01dbe74472060d0d7)
 
-Find [here]() the blog post for a better understanding.
+Find [here](https://medium.com/@amindazad/classification-model-from-scratch-49f24bdd0636) the blog post for a better understanding.
